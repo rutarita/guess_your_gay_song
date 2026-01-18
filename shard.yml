@@ -1,0 +1,13 @@
+name: guess_your_gay_music
+version: 0.1.0
+
+authors:
+  - rutarita <derat0make@gmail.com>
+
+targets:
+  guess_your_gay_music:
+    main: src/guess_your_gay_music.cr
+
+crystal: '>= 1.18.2'
+
+license: MIT
