@@ -426,16 +426,18 @@ module GuessYourGaySong
     end
 
     def load_index
-      begin_time = Time.monotonic
-      begin
-        File.open(INDEX_PATH) do |f|
-          @library.from_json(f)
+      elapsed_time = Time.measure do
+        begin
+          File.open(INDEX_PATH) do |f|
+            @library.from_json(f)
+          end
+        rescue e
+          puts "No index file found! Please create one by selecting 'rei' option in main menu!".colorize :red
+          return
         end
-        finished_in = (Time.monotonic - begin_time).total_seconds.to_s
-        puts "Finished loading in #{finished_in[0..(finished_in.index!('.') + 2)]} seconds"
-      rescue e
-        puts "No index file found! Please create one by selecting 'rei' option in main menu!".colorize :red
       end
+      finished_in = elapsed_time.total_seconds.to_s
+      puts "Finished loading in #{finished_in[0..(finished_in.index!('.') + 2)]} seconds"
     end
 
     def create_index
@@ -547,9 +549,10 @@ module GuessYourGaySong
         @all_artists_mode = true
         @survival_mode = true
         reset_gameplay_values
-        start_time = Time.monotonic
-        SCORED_ROUNDS.times { break unless play(@library.list) }
-        game_over Time.monotonic - start_time
+        elapsed_time = Time.measure do
+          SCORED_ROUNDS.times { break unless play(@library.list) }
+        end
+        game_over elapsed_time
       when keys[3]
         # artists survival
         @all_artists_mode = false
@@ -557,9 +560,10 @@ module GuessYourGaySong
         @current_artists = choose_artists avaliable_artists
         reset_gameplay_values
         selected_music = @library.filter_by_artists(@current_artists)
-        start_time = Time.monotonic
-        SCORED_ROUNDS.times { break unless play(selected_music) }
-        game_over Time.monotonic - start_time
+        elapsed_time = Time.measure do
+          SCORED_ROUNDS.times { break unless play(selected_music) }
+        end
+        game_over elapsed_time
       when keys[4]
         scoreboard_menu
       when keys[5]
