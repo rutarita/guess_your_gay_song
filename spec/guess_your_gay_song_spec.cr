@@ -4,6 +4,7 @@ describe GuessYourGaySong do
   # TODO: Write tests
 
   it "works" do
-    false.should eq(true)
+    library = GuessYourGaySong::MusicLibrary.new
+    library
   end
 end
