@@ -1,2 +1,2 @@
 require "spec"
-require "../src/guess_your_gay_music"
+require "../src/guess_your_gay_song"
