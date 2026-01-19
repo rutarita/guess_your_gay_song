@@ -454,9 +454,8 @@ module GuessYourGaySong
       @library.list.clear
       @library.artist_index.clear
       @library.scan_dir(path)
-      full_index_path = Path.home.join(INDEX_PATH)
-      Dir.mkdir_p(full_index_path.dirname)
-      File.open(full_index_path, "w") do |f|
+      Dir.mkdir_p(INDEX_PATH.dirname)
+      File.open(INDEX_PATH, "w") do |f|
         @library.to_json(f)
       end
     end
