@@ -26,8 +26,8 @@ If any of these commands are missing, install system-wide ffmpeg according to yo
 Once you ensure everything is installed:
 Clone the repository and move into it
 ```shell
-git clone https://github.com/rutarita/guess_your_gay_music/
-cd guess_your_gay_music
+git clone https://github.com/rutarita/guess_your_gay_song/
+cd guess_your_gay_song
 ```
 
 Build the executable
@@ -55,7 +55,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/rutarita/guess_your_gay_music/fork>)
+1. Fork it (<https://github.com/rutarita/guess_your_gay_song/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
