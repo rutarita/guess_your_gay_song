@@ -1,12 +1,12 @@
-name: guess_your_gay_music
+name: guess_your_gay_song
 version: 0.1.0
 
 authors:
   - rutarita <derat0make@gmail.com>
 
 targets:
-  guess_your_gay_music:
-    main: src/guess_your_gay_music.cr
+  guess_your_gay_song:
+    main: src/guess_your_gay_song.cr
 
 crystal: '>= 1.18.2'
 

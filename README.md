@@ -38,7 +38,7 @@ shards build --release --no-debug
 Run the executable
 ```shell
 cd bin
-./guess_your_gay_music
+./guess_your_gay_song
 ```
 
 Now you will see the game menu menu and you will be asked to create index of your music folder by entering command 'rei'/
